@@ -29,16 +29,37 @@ body {
     'opsz' 24;
 }
 
-/* Faint scanline sweep behind the hero — echoes the app's camera overlay */
+/* Scanline sweep behind the hero — echoes the app's camera overlay.
+   The wrapper is full-height (inset-0) and only `transform` is animated,
+   so it stays on the compositor and never triggers layout: -100% puts the
+   beam a full section above the top, +100% a full section below. Ends fade
+   so the loop restart is unseen. */
 @keyframes scan-line {
   0% {
     transform: translateY(-100%);
+    opacity: 0;
+  }
+  6% {
+    opacity: 1;
+  }
+  94% {
+    opacity: 1;
   }
   100% {
     transform: translateY(100%);
+    opacity: 0;
   }
 }
 
 .animate-scan-line {
-  animation: scan-line 3.6s linear infinite;
+  transform: translateY(-100%);
+  animation: scan-line 5s ease-in-out infinite;
+  will-change: transform, opacity;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-scan-line {
+    animation: none;
+    opacity: 0;
+  }
 }

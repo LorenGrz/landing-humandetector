@@ -58,8 +58,11 @@ export default function Home() {
       <section className="relative overflow-hidden border-b border-outline">
         <div
           aria-hidden
-          className="animate-scan-line pointer-events-none absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-accent/10 to-transparent"
-        />
+          className="animate-scan-line pointer-events-none absolute inset-0"
+        >
+          <div className="absolute inset-x-0 top-0 h-24 -translate-y-1/2 bg-gradient-to-b from-transparent via-accent/10 to-transparent" />
+          <div className="absolute inset-x-0 top-0 h-px bg-accent/40 shadow-[0_0_12px_2px_rgba(0,255,102,0.35)]" />
+        </div>
         <div className="relative mx-auto flex max-w-6xl flex-col items-center gap-8 px-6 pb-16 pt-20 text-center md:pt-28">
           <div className="flex items-center gap-2 rounded-full border border-outline bg-surface px-4 py-1.5">
             <Icon name="fingerprint" filled className="text-accent" />
