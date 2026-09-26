@@ -28,8 +28,8 @@ const FEATURES = [
   },
   {
     icon: 'cloud',
-    title: 'Backend on-demand en EC2',
-    body: 'Contenedor Docker con Caddy y TLS automático de Let’s Encrypt; imagen construida en AWS CodeBuild y publicada en ECR. Se enciende para eventos y se apaga después.',
+    title: 'Backend contenerizado en AWS',
+    body: 'Contenedor Docker con Caddy y TLS automático de Let’s Encrypt; imagen construida en AWS CodeBuild y publicada en ECR. Corrió en EC2 durante la antihackathon; hoy está dado de baja.',
   },
   {
     icon: 'block',
@@ -79,15 +79,8 @@ export default function Home() {
           </p>
           <div className="flex flex-wrap items-center justify-center gap-3">
             <a
-              href="https://lorengrz.github.io/HumanDetector/"
-              className="flex items-center gap-2 rounded-xl bg-accent px-6 py-3 font-semibold text-background shadow-[0_0_24px_rgba(0,255,102,0.35)] transition-transform hover:scale-[1.02]"
-            >
-              <Icon name="videocam" />
-              Probar la verificación
-            </a>
-            <a
               href="https://github.com/LorenGrz/HumanDetector"
-              className="flex items-center gap-2 rounded-xl border border-outline px-6 py-3 font-semibold transition-colors hover:bg-surface"
+              className="flex items-center gap-2 rounded-xl bg-accent px-6 py-3 font-semibold text-background shadow-[0_0_24px_rgba(0,255,102,0.35)] transition-transform hover:scale-[1.02]"
             >
               <Icon name="code" />
               Ver el código
@@ -100,7 +93,7 @@ export default function Home() {
             </a>
           </div>
           <p className="font-mono text-xs text-muted">
-            El backend es on-demand: se enciende para demos y eventos.
+            La app no está desplegada: el código completo está en GitHub.
           </p>
         </div>
       </section>
@@ -149,7 +142,7 @@ export default function Home() {
         <div className="mx-auto max-w-4xl px-6 text-center">
           <h2 className="mb-3 font-display text-3xl font-bold">Cómo está hecho</h2>
           <p className="mx-auto mb-10 max-w-2xl text-muted">
-            Frontend estático en GitHub Pages, backend Python contenerizado en AWS. Un WebSocket
+            Frontend estático en Next.js, backend Python contenerizado. Un WebSocket
             los une; el estado vive solo mientras dura tu conexión.
           </p>
           <div className="flex flex-wrap justify-center gap-3">
